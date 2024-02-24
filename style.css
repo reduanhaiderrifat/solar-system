@@ -1,0 +1,117 @@
+body{
+    background: #010313;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.container{
+   height: 650px;
+   width: 800px;
+   /* border: 2px solid white; */
+  
+   perspective: 1000px;
+   position: relative;
+   
+}
+.sun{
+    height: 50px;
+    width: 50px;
+   background-color:yellow;
+   box-shadow: 0 0 5px yellow,
+   0 0 15px yellow,
+   0 0 35px yellow,
+   0 0 55px yellow;
+   top: 50%;
+   left: 50%;
+   position: absolute;
+   border-radius: 50%;
+   transform: translate(-50%,-50%);
+   z-index: 9;
+}
+
+.planet{
+  position: absolute;
+ height:10px;
+ width: 10px;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%) rotateX(40deg);
+ background: red;
+ border-radius: 50%;
+ /* transform: translateY(80px); */
+ animation: orbit 4s linear infinite;
+}
+.moon {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: gray;
+    position: absolute;
+    animation: moon-orbit 2s linear infinite;
+}
+.planet:nth-child(2){
+    height: 20px ;
+    width: 20px;
+    background: brown;
+    /* transform: translateY(150px); */
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+.planet:nth-child(3){
+    height: 25px ;
+    width: 25px;
+    background: green;
+    /* transform: translateY(200px); */
+    animation-duration: 5.5s;
+    animation-delay: 2s;
+}
+.planet:nth-child(4){
+    height: 30px ;
+    width: 30px;
+    background: burlywood;
+    /* transform: translateY(250px); */
+    animation-duration: 4.3s;
+    animation-delay: 3s;
+}
+.planet:nth-child(5){
+    height: 40px ;
+    width: 40px;
+    background: blue;
+    /* transform: translateY(300px); */
+    animation-duration: 6s;
+    animation-delay: 2s;
+}
+.planet:nth-child(6){
+    height: 20px ;
+    width: 20px;
+    background: brown;
+    /* transform: translateY(350px); */
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+.planet:nth-child(7){
+    height: 50px ;
+    width: 50px;
+    background: brown;
+    /* transform: translateY(400px); */
+    animation-duration: 5.8s;
+    animation-delay: 2.7s;
+}
+
+@keyframes orbit {
+    from{ 
+        transform: rotate(0) translateX(200px) rotate(0);
+       }
+    to{
+        transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    }
+}
+@keyframes moon-orbit {
+    0% {
+        transform: rotate(0) translateX(25px) rotate(0);
+    }
+    100% {
+        transform: rotate(360deg) translateX(25px) rotate(-360deg);
+    }
+}
